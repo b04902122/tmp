@@ -1,0 +1,30 @@
+```{r}
+library(dplyr)
+library(ggplot2)
+library(rpart)
+library(rpart.plot)
+library(ggpubr)
+
+MyData <- read.csv(file="/Users/Ymc/Desktop/jason.csv", header=TRUE, sep=",", stringsAsFactors = FALSE)
+
+# plot
+ggplot(data = MyData, aes(x=月, y=電)) + geom_line(aes(colour=年份),size=1.7)+
+  scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10,11,12))+
+  scale_y_continuous(limits = c(250000,470000),breaks = c(450000,400000,350000,300000,250000), labels = c("450k","400k","350k","300k","250k"))+
+  labs(x="月份",y="總用電量（度）")+
+  ggtitle("月份用電量增長趨勢")+
+  theme(plot.title = element_text(hjust = 0.5, size = 22,    face="bold"),axis.title=element_text(size=14,face="bold"))
+
+```
+```{r}
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+```
